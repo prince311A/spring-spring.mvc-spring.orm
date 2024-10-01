@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        "> <!-- bean definitions here -->
+        
+        <!-- StandAlone list  -->
+        <util:list list-class="java.util.LinkedList" id="subjects">
+        <value>Java</value>
+        <value>C++</value>
+        <value>Operating System</value>
+        <value>DBMS</value>        
+        </util:list>
+        
+         <!-- StandAlone Map  -->
+         <util:map map-class="java.util.HashMap" id="price">
+         <entry key="1" value="Aman"></entry>
+         <entry key="2" value="Bhuvan"></entry>
+         <entry key="3" value="Chandni"></entry>
+         </util:map>
+         
+          <!-- StandAlone Properties  -->
+          <util:properties id ="properti">
+          <prop key="driver">com.my.cj.jdbc.driver</prop>
+          <prop key="username">root</prop>
+          <prop key="pass">prince311@A</prop>
+          <prop key="db">jdbc</prop>
+          </util:properties>
+     <bean class = " in.sb.beans.Student" name = "std1">
+     <property name="subjectList"><ref bean = "subjects"/> </property>
+     <property name="feesMap"><ref bean="price"/></property>
+     <property name="property"><ref bean="properti" /></property>
+     
+     </bean>
+
+</beans>
